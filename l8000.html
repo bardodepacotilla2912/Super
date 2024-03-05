@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Línea 8000</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Bootstrap Icons-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+  <!-- SimpleLightbox plugin CSS-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+  <style>
+    /* Estilos para las tarjetas */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    body {
+    background-color: #ffe0b2; /* Color de fondo naranja claro */
+}
+
+    .card {
+      width: calc(50% - 15px); /* 33.33% para cada tarjeta, menos el margen */
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 40px;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    /* Estilos para la modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      padding: 20px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px; /* Agregamos un margen inferior entre las imágenes */
+    }
+
+    /* Estilos para la tachita */
+    .close {
+      color: white;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #999;
+    }
+
+    header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-2628683052122789716&th=18e070ac934bc8bf&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-1ygaB8VCKl52sYFvG_Up5TzzZUlKPjGe3uaZJ2GpzYyjLRtC0H2Lgmdam_QtkGRG1Z7Z3sHxsu01m5BIYA4eDhGeANvQRgS7i7PlBYQ4dohgAa7eYfy7V504&disp=emb&realattid=18e070abf367313eacd1");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.masthead {
+    margin-bottom: 50px; /* Ajusta este valor según la separación deseada */
+}
+  </style>
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">Super Pasos</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <!-- Masthead-->
+     <header class="masthead">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Super Pasos</h1>
+                    <h3 class="text-white font-weight-bold">LINEA 8000</h3>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">Comodidad y elegancia</p>
+                    <a class="btn btn-primary btn-xl" href="index.html">IR AL INICIO</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- Contenedor para las tarjetas -->
+  <div class="card-container">
+  <div class="card" onclick="openModal('myModal1')">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-4594626000575623835&th=18e0707e3ca76f15&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ8bf0ipIQ68PWQDC-uAqYxk6VGdxLG7WPeARZZqFxIPeZuNvBrsT9eX5qtH8xYZqzRBKCTf9NOaF9vYm_I_K64mDKHUwPL2CwL1FNJpiBy8NYyIIURFxIr1ZE8&disp=emb&realattid=18e0707d38ec8471bd81" alt="Imagen 1">
+  </div>
+
+  <div class="card" onclick="openModal('myModal2')">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-5516003295937553364&th=18e07089ab2a642a&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ8hFx2I7pJ2HmeF2F8qvgcDgvI0BsLQoiXfAbtBLrWs38wYLvsi071-gumorcAiNYEZep6oe8MYkuM-SIxtI2iWVTAhXHaTIKxvSubxS88qZgX7ptRfETO_Yjk&disp=emb&realattid=18e0708905c18d874081" alt="Imagen 2">
+  </div>
+
+  <div class="card" onclick="openModal('myModal3')">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-2111333915799872833&th=18e070924688b98a&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ8LMs8JZuw21SbDlTyv9M1t7z2baMh3EiQFuHev4OC9WaH90aRmmaaB_seWNTjykOtAJ4J_D6UcwZe9xizCrTjIC19q8UuqGHk0o_F9lIz4-9atogl_oa-chXs&disp=emb&realattid=18e07091b6ae771a07c1" alt="Imagen 3">
+  </div>
+
+  <div class="card" onclick="openModal('myModal4')">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-2253585257022187233&th=18e0709dd64a9d73&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ_mTv7Bmt_hOfLEJvfjm9nvgC9dAeQLevT3TMKB39vR2UmLUVqLgjeDsxjesmIWeBWimA9NWCUm6B9A1N2_kaUBPFOEUqzihtQ1Y3Jbj-H5T17VDcdicDsSX1A&disp=emb&realattid=18e0709d5713a7b5e201" alt="Imagen 4">
+  </div>
+
+  <div class="card" onclick="openModal('myModal5')">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-8103953891186603709&th=18e070a2332463d7&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-vlGz5dp_HdGyvcfQ6_jyx8tWjk1t3pgoZQgYIwiOQ6IGourDbCTJVuXX16vaiptWyPk8-xfpL1sLJf5Ej7i_bXcSToOhawBW7UG5Wa85c-mvoAjO3z4MJbnE&disp=emb&realattid=18e070a19aecbdf22a51" alt="Imagen 5">
+  </div>
+
+  <div class="card" onclick="openModal('myModal6')">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r4401173751270082364&th=18e070a929d3595e&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ92BcWyekacTLJ4gMHEFYpluj6LVBfiOdiMaI6dTHbRTjSBypB1bGjYS6ORli8qM2MkbsKZY7kyav5vBzKZDbOxHjd_FG_n9sxAX5IlWDkcJUUCqQZU7pPTXa4&disp=emb&realattid=18e070a8c189ef9ffc91" alt="Imagen 6">
+  </div>
+
+</div>
+
+<!-- Modales -->
+<div id="myModal1" class="modal">
+  <span class="close" onclick="closeModal('myModal1')">&times;</span>
+  <div class="modal-content">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-4594626000575623835&th=18e0707e3ca76f15&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ8bf0ipIQ68PWQDC-uAqYxk6VGdxLG7WPeARZZqFxIPeZuNvBrsT9eX5qtH8xYZqzRBKCTf9NOaF9vYm_I_K64mDKHUwPL2CwL1FNJpiBy8NYyIIURFxIr1ZE8&disp=emb&realattid=18e0707d38ec8471bd81" alt="Imagen 1">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-8259118851573807576&th=18e07082c147cd00&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-ve4XjgETsTaBgYBjcYnqOGv71tp2DqYdZu4hbGd6Fp5iSFme61OFFS5T-FU64WsjevsOn-4-cNw5E3fWNTOO3CcoWFFej8virCrHLlMGUfPQcFOoMUkw4Nn8&disp=emb&realattid=18e07081da5e55bb8861" alt="Imagen 1">
+  </div>
+</div>
+
+<div id="myModal2" class="modal">
+  <span class="close" onclick="closeModal('myModal2')">&times;</span>
+  <div class="modal-content">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-5516003295937553364&th=18e07089ab2a642a&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ8hFx2I7pJ2HmeF2F8qvgcDgvI0BsLQoiXfAbtBLrWs38wYLvsi071-gumorcAiNYEZep6oe8MYkuM-SIxtI2iWVTAhXHaTIKxvSubxS88qZgX7ptRfETO_Yjk&disp=emb&realattid=18e0708905c18d874081" alt="Imagen 2">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-488647996826267400&th=18e0708e48552d6c&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-D52rcy1hg5msGI9h9M5-El7_F4zArArMSurefG9_CGSSt-8nSAYxZ8jVQGjztk0vpXmypvgSgSjH86El_1DPcUt4-dj7XvfTde06qLrk43D4qeov7ODSxG3w&disp=emb&realattid=18e0708dca362eacb1f1" alt="Imagen 2">
+  </div>
+</div>
+
+<div id="myModal3" class="modal">
+  <span class="close" onclick="closeModal('myModal3')">&times;</span>
+  <div class="modal-content">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-2111333915799872833&th=18e070924688b98a&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ8LMs8JZuw21SbDlTyv9M1t7z2baMh3EiQFuHev4OC9WaH90aRmmaaB_seWNTjykOtAJ4J_D6UcwZe9xizCrTjIC19q8UuqGHk0o_F9lIz4-9atogl_oa-chXs&disp=emb&realattid=18e07091b6ae771a07c1" alt="Imagen 3">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-237492089441825523&th=18e07097ba68ed6a&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ_qA-ZCFHhd7ThVxpgWsMVXmHP2xL-rP2Gfwn55TfxX4nLw1AKvPlxGE5Bb2GHsybDKvmWkc1Bilhe2o_ICqcMaKfnmhpfMZFGqNgrkshV07hr1tRvMWMEiqNo&disp=emb&realattid=18e0709709a470114ed1" alt="Imagen 3">
+  </div>
+</div>
+
+<div id="myModal4" class="modal">
+  <span class="close" onclick="closeModal('myModal4')">&times;</span>
+  <div class="modal-content">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-2253585257022187233&th=18e0709dd64a9d73&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ_mTv7Bmt_hOfLEJvfjm9nvgC9dAeQLevT3TMKB39vR2UmLUVqLgjeDsxjesmIWeBWimA9NWCUm6B9A1N2_kaUBPFOEUqzihtQ1Y3Jbj-H5T17VDcdicDsSX1A&disp=emb&realattid=18e0709d5713a7b5e201" alt="Imagen 4">
+  </div>
+</div>
+
+<div id="myModal5" class="modal">
+  <span class="close" onclick="closeModal('myModal5')">&times;</span>
+  <div class="modal-content">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-8103953891186603709&th=18e070a2332463d7&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-vlGz5dp_HdGyvcfQ6_jyx8tWjk1t3pgoZQgYIwiOQ6IGourDbCTJVuXX16vaiptWyPk8-xfpL1sLJf5Ej7i_bXcSToOhawBW7UG5Wa85c-mvoAjO3z4MJbnE&disp=emb&realattid=18e070a19aecbdf22a51" alt="Imagen 5">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-4013067682429350682&th=18e070a59fc9b69c&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-b33oDCPPOwamYUwlf_FnrMDcBkr0zTCG1qMlB9DiK3MHkOJ6WHE3C6Kzaiw_NJMKMLyvS09y3rD6QG72nZx3BmEXbuJsrO7niFQcf35pfFx_gGcoE7V2LeXE&disp=emb&realattid=18e070a50c59ed613bc1" alt="Imagen 5">
+  </div>
+</div>
+
+<div id="myModal6" class="modal">
+  <span class="close" onclick="closeModal('myModal6')">&times;</span>
+  <div class="modal-content">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r4401173751270082364&th=18e070a929d3595e&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ92BcWyekacTLJ4gMHEFYpluj6LVBfiOdiMaI6dTHbRTjSBypB1bGjYS6ORli8qM2MkbsKZY7kyav5vBzKZDbOxHjd_FG_n9sxAX5IlWDkcJUUCqQZU7pPTXa4&disp=emb&realattid=18e070a8c189ef9ffc91" alt="Imagen 6">
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=711a525091&attid=0.1&permmsgid=msg-a:r-2628683052122789716&th=18e070ac934bc8bf&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ-1ygaB8VCKl52sYFvG_Up5TzzZUlKPjGe3uaZJ2GpzYyjLRtC0H2Lgmdam_QtkGRG1Z7Z3sHxsu01m5BIYA4eDhGeANvQRgS7i7PlBYQ4dohgAa7eYfy7V504&disp=emb&realattid=18e070abf367313eacd1" alt="Imagen 6">
+  </div>
+</div>
+
+<div id="myModal7" class="modal">
+  <span class="close" onclick="closeModal('myModal7')">&times;</span>
+  <div class="modal-content">
+    <img src="" alt="Imagen 7">
+    <img src="" alt="Imagen 7">
+    <img src="" alt="Imagen 7">
+  </div>
+</div>
+
+<script>
+// Función para abrir el modal
+function openModal(modalId) {
+  document.getElementById(modalId).style.display = "block";
+}
+
+// Función para cerrar el modal
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+}
+
+// Cerrar modal haciendo clic fuera del contenido
+window.onclick = function(event) {
+            if (event.target.className == "modal") {
+                event.target.style.display = "none";
+            }
+        }
+</script>
+
+<!-- Phone-->
+<div class="row gx-4 gx-lg-5 justify-content-center mt-4">
+  <div class="col-lg-4 text-center mb-5 mb-lg-0">
+      <i class="bi-phone fs-2 mb-3 text-muted"></i>
+      <div>477 123 4567</div>
+      <div>xitony@correo.com</div>
+  </div>
+</div>
+<!-- Footer-->
+      <footer class="bg-light py-5">
+          <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2024 - Super Pasos</div></div>
+      </footer>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- SimpleLightbox plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
